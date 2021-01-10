@@ -41,7 +41,7 @@ program
                 if (err === null) return console.log(err)
             })
         }
-        // Copy run command to clip board
+        // Copy run command to clip board`
     })
 
 program.parse(process.argv);
