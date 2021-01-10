@@ -1,7 +1,7 @@
 const fs = require("fs")
 const https = require("https")
 const path = require("path")
-const { spawn } = require("child_process");
+const { spawn } = require('child_process');
 
 const { program } = require("commander")
 program.version('0.0.1')
@@ -41,7 +41,12 @@ program
                 if (err === null) return console.log(err)
             })
         }
-        // Copy run command to clip board`
+        
+        var child = spawn("java", ["-jar", "server.jar", "nogui"], {cwd: dir})
+
+        child.stdout.pipe(process.stdout);
+        child.stderr.pipe(process.stderr);
+        process.stdin.pipe(child.stdin);
     })
 
 program.parse(process.argv);
