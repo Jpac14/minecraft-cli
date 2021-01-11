@@ -1,0 +1,26 @@
+{
+    "vanilla": {
+        "1.16.4": "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar"
+    },
+    "bukkit": {
+        "1.16.4": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.4.jar"
+    },
+    "spigot": {
+        "1.16.4": "https://cdn.getbukkit.org/spigot/spigot-1.16.4.jar"
+    },
+    "paper": {
+        "1.16.4": "https://papermc.io/api/v2/projects/paper/versions/1.16.4/builds/401/downloads/paper-1.16.4-401.jar"
+    },
+    "bungee": {
+        "1.16.4": "https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar"
+    },
+    "waterfall": {
+        "1.16.4": "https://papermc.io/api/v2/projects/waterfall/versions/1.16/builds/390/downloads/waterfall-1.16-390.jar"
+    },
+    "travertine": {
+        "1.16.4": "https://papermc.io/api/v2/projects/travertine/versions/1.16/builds/168/downloads/travertine-1.16-168.jar"
+    },
+    "sponge-vanilla": {
+        "1.12.2": "https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.12.2-7.3.0/spongevanilla-1.12.2-7.3.0.jar"
+    }
+}
