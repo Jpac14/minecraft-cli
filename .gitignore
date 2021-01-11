@@ -118,5 +118,5 @@ dist
 .pnp.*
 
 # Project specific ignores
-app.js
 test/
+js/

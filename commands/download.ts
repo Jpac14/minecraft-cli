@@ -2,8 +2,10 @@ const fs = require("fs")
 const path = require("path")
 const https = require("https")
 
+const app = require("../app")
+
 export function download(dir, cmdObj) {
-    const raw = fs.readFileSync("./list/server.json")
+    const raw = fs.readFileSync(app.programDir)
     let json = JSON.parse(raw)
 
     let url = json[cmdObj.type][cmdObj.mcversion]
