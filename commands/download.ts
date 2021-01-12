@@ -5,13 +5,21 @@ const https = require("https")
 const app = require("../app")
 
 export function download(dir, cmdObj) {
-    const raw = fs.readFileSync(app.programDir)
+    const raw = fs.readFileSync(`${app.programDir}/server.json`)
     let json = JSON.parse(raw)
 
-    let url = json[cmdObj.type][cmdObj.mcversion]
 
-    console.log(url)
+    let versions;
+    if ((versions = json[cmdObj.type]) == undefined) {
+        return console.error("Server type not found")
+    }
 
+    let url;
+
+    if ((url = versions[cmdObj.mcversion]) == undefined) {
+        return console.error("Minecraft version not found")
+    }
+    
     const file = fs.createWriteStream(path.format({
         dir: dir === undefined ? "." : dir,
         base: "server.jar"
@@ -20,4 +28,5 @@ export function download(dir, cmdObj) {
     https.get(url, function(response) {
         response.pipe(file)
     })
+
 }
