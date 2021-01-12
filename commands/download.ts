@@ -4,7 +4,7 @@ const https = require("https")
 
 const app = require("../app")
 
-export function download(dir, cmdObj) {
+export function download(dir, cmdObj, callback) {
     const raw = fs.readFileSync(`${app.programDir}/server.json`)
     let json = JSON.parse(raw)
 
@@ -25,8 +25,11 @@ export function download(dir, cmdObj) {
         base: "server.jar"
     }))
 
+    file.on("finish", () => {
+        return callback()
+    })
+
     https.get(url, function(response) {
         response.pipe(file)
     })
-
 }
